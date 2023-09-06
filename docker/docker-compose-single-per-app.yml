@@ -1,0 +1,86 @@
+version: '3.9'
+
+services:
+  clp-order1:
+    build: ../order
+    container_name: clp-order1
+    ports:
+      - 8197:8197
+    env_file:
+      - ./env/order.env
+    environment:
+      SERVER_PORT: 8197
+
+  clp-product1:
+    build: ../product
+    container_name: clp-product1
+    ports:
+      - 8199:8199
+    env_file:
+      - ./env/product.env
+    environment:
+      SERVER_PORT: 8199
+
+  clp-profitability1:
+    build: ../profitability
+    container_name: clp-profitability1
+    ports:
+      - 8195:8195
+    env_file:
+      - ./env/profitability.env
+    environment:
+      SERVER_PORT: 8195
+
+  clp-product-standard1:
+    build: ../product-standard
+    container_name: clp-product-standard1
+    ports:
+      - 8198:8198
+    env_file:
+      - ./env/product-standard.env
+    environment:
+      SERVER_PORT: 8198
+
+  clp-customer1:
+    build: ../customer
+    container_name: clp-customer1
+    ports:
+      - 8194:8194
+    env_file:
+      - ./env/customer.env
+    environment:
+      SERVER_PORT: 8194
+
+  clp-product-relations1:
+    build: ../product-relations
+    container_name: clp-product-relations1
+    ports:
+      - 8192:8192
+    env_file:
+      - ./env/product-relations.env
+    environment:
+      SERVER_PORT: 8192
+
+  clp-decision1:
+    build: ../decision
+    container_name: clp-decision1
+    ports:
+      - 8193:8193
+    env_file:
+      - ./env/decision.env
+    environment:
+      SERVER_PORT: 8193
+
+  clp-backend-for-frontend1:
+    build: ../backend-for-frontend
+    container_name: clp-backend-for-frontend1
+    ports:
+      - 8190:8190
+    env_file:
+      - ./env/product-relations.env
+    environment:
+      SERVER_PORT: 8190
+
+networks:
+  default:
+    name: clp_network
